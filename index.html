@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <style>
+        * { box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        .box h2 { text-align: center; color: #333; margin-bottom: 25px; }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; margin-bottom: 6px; color: #555; font-weight: bold; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:active { background: #5568d3; }
+        .sucesso { color: green; text-align: center; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>📝 Enviar dados</h2>
+        
+        <form action="COLOQUE_SEU_LINK_AQUI" method="POST">
+            <div class="input-group">
+                <label>Nome / Usuário</label>
+                <input type="text" name="nome" required placeholder="Digite seu nome">
+            </div>
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" name="senha" required placeholder="Digite uma senha">
+            </div>
+            <button type="submit">Enviar ✅</button>
+        </form>
+        <div class="sucesso" id="mensagemSucesso">Enviado! ✅ Obrigado!</div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function() {
+            setTimeout(() => {
+                form.style.display = 'none';
+                document.getElementById('mensagemSucesso').style.display = 'block';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
+  
